@@ -1,0 +1,19 @@
+{
+  "name": "digital-treasure-baghdad",
+  "version": "1.0.0",
+  "description": "An Arabic puzzle hunt with a Cashu Testnut reward",
+  "scripts": {
+    "test": "node --test puzzles.test.js",
+    "build": "esbuild app.js --bundle --minify --format=esm --target=es2022 --outfile=bundle.js",
+    "test:mint": "node test-mint.js"
+  },
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "@cashu/cashu-ts": "4.13.1"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2"
+  },
+  "private": true
+}

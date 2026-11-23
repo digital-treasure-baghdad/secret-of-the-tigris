@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0d1412">
+  <meta name="description" content="لعبة ألغاز عربية تأخذك من ضفاف دجلة إلى كنز رقمي تجريبي عبر Cashu.">
+  <title>الكنز الرقمي | بغداد</title>
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./bundle.js"></script>
+</head>
+<body>
+  <header class="mast shell">
+    <a class="wordmark" href="./"><span class="sigil" aria-hidden="true">✦</span><span>الكنز الرقمي<small lang="en">DIGITAL TREASURE</small></span></a>
+    <button type="button" class="subtle" id="about-open">كيف تلعب؟</button>
+  </header>
+  <main class="shell">
+    <section class="hero" aria-labelledby="title">
+      <div class="hero-copy">
+        <p class="eyebrow">بغداد القديمة</p>
+        <h1 id="title">سرّ دجلة</h1>
+        <p>تركَ لك الورّاق رسالة بثلاثة مفاتيح. اتبع أثره عبر بغداد وافتح صندوق الكنز.</p>
+        <a class="button" id="start" href="#hunt">ابدأ الرحلة</a>
+      </div>
+    </section>
+    <section id="hunt" class="hunt" aria-labelledby="hunt-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">رسالة الورّاق</p><h2 id="hunt-title" tabindex="-1">مفاتيح الكنز</h2></div>
+        <p id="progress-label" aria-live="polite"></p>
+      </div>
+      <ol id="route" class="route" aria-label="محطات الرحلة"></ol>
+      <div class="workspace">
+        <article class="panel" id="clue-panel" aria-labelledby="clue-title">
+          <p class="eyebrow" id="clue-index"></p>
+          <h3 id="clue-title" tabindex="-1"></h3>
+          <p id="clue-text" class="clue-text"></p>
+          <form id="answer-form">
+            <label for="answer">جوابك</label>
+            <div class="answer-row">
+              <input id="answer" dir="auto" name="answer" placeholder="اكتب الجواب هنا" maxlength="100" required autocomplete="off" aria-describedby="answer-feedback">
+              <button class="button" type="submit">تحقّق</button>
+            </div>
+            <p id="answer-feedback" class="feedback" role="status"></p>
+          </form>
+          <details id="hint-box"><summary>أحتاج تلميحًا</summary><p id="hint"></p></details>
+        </article>
+        <aside class="panel chest" aria-labelledby="reward-title">
+          <div class="chest-mark" aria-hidden="true">✧</div>
+          <p class="eyebrow">صندوق الكنز</p>
+          <h3 id="reward-title"><bdi>٢١</bdi> ساتوشي</h3>
+          <p class="tag">جائزة تجريبية عبر Cashu</p>
+          <p>تُصدر الجائزة من <bdi lang="en">Testnut</bdi> بعد حلّ المحطات الثلاث. الساتوشي هنا تجريبي وبلا قيمة مالية.</p>
+          <button type="button" class="button" id="claim" disabled>استلم التوكن التجريبي</button>
+          <p id="reward-feedback" class="feedback" role="status"></p>
+          <div id="token-result" hidden>
+            <label for="token">توكن Cashu</label>
+            <textarea id="token" readonly dir="ltr" rows="3"></textarea>
+            <button class="subtle" id="copy" type="button">انسخ التوكن</button>
+            <p class="token-help">جرّب استلامه في محفظة تدعم Cashu بعد إضافة عنوان السكّ التجريبي <bdi dir="ltr">testnut.cashu.space</bdi>.</p>
+          </div>
+        </aside>
+      </div>
+      <button type="button" id="reset" class="subtle reset" hidden>أعد الرحلة</button>
+    </section>
+    <section class="demo panel" aria-labelledby="demo-title">
+      <h2 id="demo-title">فيديو العرض</h2>
+      <p>شاهد رحلة الألغاز وتجربة الجائزة في ٢٧ ثانية.</p>
+      <video controls playsinline preload="none" poster="./baghdad.webp" aria-label="فيديو عرض الكنز الرقمي">
+        <source src="./demo.mp4" type="video/mp4">
+        <a href="./demo.mp4">نزّل فيديو العرض</a>
+      </video>
+    </section>
+  </main>
+  <footer class="shell"><span>الكنز الرقمي · بغداد</span><a href="mailto:skksk245@gmail.com">تواصل مع فريق اللعبة</a><span lang="en" dir="ltr">Built with Cashu · Nut November 2026</span></footer>
+  <dialog id="about">
+    <div class="dialog-inner">
+      <h2>كيف تلعب؟</h2>
+      <p>حلّ اللغز في كل محطة حتى تُفتح المحطة اللي بعدها. إذا احتجت مساعدة، افتح التلميح.</p>
+      <p>بعد المحطة الثالثة تقدر تستلم توكن Cashu تجريبي. تقدّمك محفوظ في هذا المتصفح. اللعبة تجربة فردية.</p>
+      <form method="dialog"><button class="button">رجوع إلى اللعبة</button></form>
+    </div>
+  </dialog>
+</body>
+</html>
